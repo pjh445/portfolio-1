@@ -179,6 +179,7 @@ h2 {text-align:center; font-size:4rem; margin-bottom:60pt; font-family: 'Niconne
 	#menu a {padding:0; margin:0; text-align:center;}
 }
 
+/* 넓이 (600~ 픽셀) */
 @media (min-width:600px) {
 	#menu a:hover {color:#a0d2c9;}
 }
