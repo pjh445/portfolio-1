@@ -14,9 +14,9 @@ nav.act {background:#8373a2;}
 nav> div {max-width:1490px; margin:auto; display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;}
 nav img {width:50px; margin-left:50px;}
 /*nav p {flex:1; font-size:2rem; color:white; font-family: 'Niconne', cursive;}*/
+
 #menu a {padding-right:30px; color:white; text-shadow:0 0 10px black; font-family: 'Niconne', cursive; font-size:1.7rem;}
-#menu a:hover, 
-#menu .active {color:#a0d2c9;}
+#menu a.active {color:#a0d2c9;}
 
 /*헤더*/
 #top {height:100vh; background:url("../images/sunset-26317752.jpg") no-repeat fixed center top / cover;}
@@ -179,6 +179,9 @@ h2 {text-align:center; font-size:4rem; margin-bottom:60pt; font-family: 'Niconne
 	#menu a {padding:0; margin:0; text-align:center;}
 }
 
+@media (min-width:600px) {
+	#menu a:hover {color:#a0d2c9;}
+}
 
 
 

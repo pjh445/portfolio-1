@@ -34,8 +34,7 @@
 			$("html,body").stop().animate({scrollTop : $(this.hash).offset().top });
 		}
 		//상단 메뉴 - 활성화 유지 (색변경)
-		//if( $("#menu a") ){
-			$("#menu a").removeClass("active");
+		//if( $("#menu a") ){			
 			let i = $(this).index();
 			active(i);
 		//}
@@ -59,15 +58,15 @@
 	
 	//휴대폰에서는 상단 배경색 보임, 스크롤하면 해당메뉴 색 들어옴
 	if( $(window).outerWidth() <= 600 ){
-		console.log($("#about").position().top);
+		/*console.log($("#about").position().top);
 		console.log($("#portfolio").position().top);
 		console.log($("#event").position().top);
-		console.log($("#contact").position().top);
+		console.log($("#contact").position().top);*/
 			
 		$("nav").addClass("act");
 		
 		
-		function active(i){			
+		function active(i){		
 			$("#menu a").eq(i).addClass("active").siblings().removeClass("active");
 		}
 		
@@ -78,24 +77,16 @@
 				$("#menu a").removeClass("active");				
 			}	
 			if( $(window).scrollTop() > 831  &&   $(window).scrollTop() <= 2000){
-				//$("#menu a").removeClass("active");
-				//$("#menu a").eq(1).addClass("active");
 				active(1);
 			}
 			if( $(window).scrollTop() > 2001  &&  $(window).scrollTop() <= 5100 ){
-				//$("#menu a").removeClass("active");
-				//$("#menu a").eq(2).addClass("active");	
 				active(2);				
 			}
 			if( $(window).scrollTop() >= 5101  &&  $(window).scrollTop() <= 10000){
-				//$("#menu a").removeClass("active");
-				//$("#menu a").eq(3).addClass("active");
 				active(3);
 			}
 			if( $(window).scrollTop() > 10001 ){
 				active(4);
-				//$("#menu a").removeClass("active");
-				//$("#menu a").eq(4).addClass("active");
 			}
 		});	
 	} 
