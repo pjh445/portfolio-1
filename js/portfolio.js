@@ -36,7 +36,8 @@
 		//상단 메뉴 - 활성화 유지 (색변경)
 		//if( $("#menu a") ){
 			$("#menu a").removeClass("active");
-			$(this).addClass("active");
+			let i = $(this).index();
+			active(i);
 		//}
 	});
 	
@@ -57,36 +58,44 @@
 	type();
 	
 	//휴대폰에서는 상단 배경색 보임, 스크롤하면 해당메뉴 색 들어옴
-	if( $(document).outerWidth() <= 600 ){
+	if( $(window).outerWidth() <= 600 ){
 		console.log($("#about").position().top);
 		console.log($("#portfolio").position().top);
 		console.log($("#event").position().top);
 		console.log($("#contact").position().top);
 			
-		$("nav").addClass("act");		
+		$("nav").addClass("act");
 		
-		$(window).scroll(function(){
+		
+		function active(i){			
+			$("#menu a").eq(i).addClass("active").siblings().removeClass("active");
+		}
+		
+		
+		$(window).scroll(function(){			
 			
-			console.log( $(document).scrollTop()  );
-			
-			if( $(document).scrollTop() <= 830 ){
+			if( $(window).scrollTop() <= 830 ){
 				$("#menu a").removeClass("active");				
 			}	
-			if( $(document).scrollTop() > 831  &&   $(document).scrollTop() <= 2000){
-				$("#menu a").removeClass("active");
-				$("#menu a").eq(1).addClass("active");
+			if( $(window).scrollTop() > 831  &&   $(window).scrollTop() <= 2000){
+				//$("#menu a").removeClass("active");
+				//$("#menu a").eq(1).addClass("active");
+				active(1);
 			}
-	if( $(document).scrollTop() > 2001  &&  $(document).scrollTop() <= 5100 ){
-				$("#menu a").removeClass("active");
-				$("#menu a").eq(2).addClass("active");				
+			if( $(window).scrollTop() > 2001  &&  $(window).scrollTop() <= 5100 ){
+				//$("#menu a").removeClass("active");
+				//$("#menu a").eq(2).addClass("active");	
+				active(2);				
 			}
-			if( $(document).scrollTop() >= 5101  &&  $(document).scrollTop() <= 10000){
-				$("#menu a").removeClass("active");
-				$("#menu a").eq(3).addClass("active");
+			if( $(window).scrollTop() >= 5101  &&  $(window).scrollTop() <= 10000){
+				//$("#menu a").removeClass("active");
+				//$("#menu a").eq(3).addClass("active");
+				active(3);
 			}
-			if( $(document).scrollTop() > 10001 ){
-				$("#menu a").removeClass("active");
-				$("#menu a").eq(4).addClass("active");
+			if( $(window).scrollTop() > 10001 ){
+				active(4);
+				//$("#menu a").removeClass("active");
+				//$("#menu a").eq(4).addClass("active");
 			}
 		});	
 	} 
